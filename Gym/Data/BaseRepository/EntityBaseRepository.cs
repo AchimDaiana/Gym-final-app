@@ -37,14 +37,14 @@ namespace Gym.Data.BaseRepository
             return outcome;
         }
 
-        /*public async Task<IEnumerable<G>> GetAllAsync(params Expression<Func<G, object>>[] includeProperties)
+        public async Task<IEnumerable<G>> GetAllAsync(params Expression<Func<G, object>>[] includeProperties)
         {
             IQueryable<G> query = _context.Set<G>();
             query = includeProperties.Aggregate(query, (current, includeProperties) => current.Include(includeProperties));
             return await query.ToListAsync();
 
         }
-*/
+
         public async Task<G> GetByIdAsync(int id)
         {
             var outcome = await _context.Set<G>().FirstOrDefaultAsync(m => m.Id == id);

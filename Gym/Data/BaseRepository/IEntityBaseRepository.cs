@@ -10,7 +10,7 @@ namespace Gym.Data.BaseRepository
     {
         Task<IEnumerable<G>> GetAllAsync();
 
-       // Task<IEnumerable<G>> GetAllAsync(params Expression<Func<G, object>>[] includeProperties);
+        Task<IEnumerable<G>> GetAllAsync(params Expression<Func<G, object>>[] includeProperties);
 
         Task<G> GetByIdAsync(int id);
 

@@ -1,15 +1,15 @@
-﻿@using Gym.Data.ViewModels 
+﻿@using Gym.Data.ViewModels
 @model TrainingVM
 @using Gym.Data.Enums
 @{
-    ViewData["Title"] = "Create new training";
+    ViewData["Title"] = "Edit training";
 }
 
-<h2 class="text-center">Adauga un antrenament nou</h2>
+<h2 class="text-center">Modifica un antrenament </h2>
 <br />
 <div class="row">
     <div class="col-md-8 offset-2">
-        <form method="post" asp-action="Create">
+        <form method="post" asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="row">
@@ -68,7 +68,7 @@
 
 
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Edit" class="btn btn-primary" />
                 <a class="float-right" asp-action="Index">Back to List</a>
             </div>
 
@@ -78,5 +78,6 @@
         </form>
     </div>
 </div>
+
 
 
