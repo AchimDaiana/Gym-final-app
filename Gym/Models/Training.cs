@@ -1,4 +1,5 @@
-﻿using Gym.Data.Enums;
+﻿using Gym.Data.BaseRepository;
+using Gym.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Gym.Models
 {
-    public class Training
+    public class Training : IEntityBase
     {
         [Key]
         public int Id { get; set; }

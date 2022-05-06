@@ -1,4 +1,5 @@
 ﻿using Gym.Data;
+using Gym.Data.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,16 +11,30 @@ namespace Gym.Controllers
 {
     public class TrainingsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly ITrainingsServices _service;
 
-        public TrainingsController(ApplicationDbContext context)
+        public TrainingsController(ITrainingsServices service)
         {
-            _context = context;
+            _service = service;
         }
         public async Task<IActionResult> Index()
         {
-            var allTrainings = await _context.Trainings.ToListAsync();
+            var allTrainings = await _service.GetAllAsync();
+            return View(allTrainings);
+        }
+
+        //get/training/details
+        public async Task<IActionResult> Details(int id)
+        {
+            var trainingDetails = await _service.GetTrainingByIdAsync(id);
+            return View(trainingDetails);
+
+        }
+
+        public IActionResult Create()
+        {
             return View();
         }
+
     }
 }

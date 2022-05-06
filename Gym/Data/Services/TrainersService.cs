@@ -10,8 +10,6 @@ namespace Gym.Data.Services
 {
     public class TrainersService : EntityBaseRepository<Trainer>, ITrainersServices
     {
-        private readonly ApplicationDbContext _context;
-
         public TrainersService(ApplicationDbContext context) : base(context)
         {    
         }

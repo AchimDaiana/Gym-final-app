@@ -32,7 +32,8 @@ namespace Gym
             //services conf
             services.AddScoped<ITrainersServices, TrainersService>();
             services.AddScoped<ISubscriptionsServices, SubscriptionsService>();
-            
+            services.AddScoped<ITrainingsServices, TrainingsService>();
+
             services.AddControllersWithViews();
         }
 
